@@ -1,0 +1,9 @@
+.banner {
+    width: 80vw;
+    height: 40vh;
+    background-image: url('./Images/logo.png');
+    background-position: center;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
