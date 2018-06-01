@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+}
+
+.navbar_left {
+    flex: 2;
+}
+
+.navbar_right {
+    flex: 2;
+}
+
+.navbar_left > a {
+    align-content: flex-start;
+}
+
+.navbar_right > a {
+    align-content: flex-end;
+}
