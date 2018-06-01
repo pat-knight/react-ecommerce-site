@@ -1,19 +1,26 @@
 .navbar {
     display: flex;
+    justify-content: space-between;
+}
+
+.navbar > ul {
+    justify-content: space-evenly;
+    display: inherit;
+    flex: 2;
 }
 
 .navbar_left {
-    flex: 2;
+    justify-content: space-evenly;
 }
 
 .navbar_right {
-    flex: 2;
+    justify-content: space-evenly;
 }
 
-.navbar_left > a {
-    align-content: flex-start;
+.navbar_left > li {
+    list-style: none;
 }
 
-.navbar_right > a {
-    align-content: flex-end;
+.navbar_right > li {
+    list-style: none;
 }
