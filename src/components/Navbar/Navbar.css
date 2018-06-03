@@ -26,6 +26,26 @@ background: linear-gradient(135deg, rgba(245,245,245,1) 0%, rgba(237,237,237,1) 
 
 .navbar_left > li {
     list-style: none;
+    height: 80%;
+    opacity: .9;
+}
+
+.navbar_left > li > a {
+    text-decoration: inherit;
+    color: rgba(100, 0, 196, .95);
+    transition: all 1s ease-out; 
+}
+
+.navbar_left > li > a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(169, 169, 240, 0.8);
+    transform: scaleX(1.1);
+    /* text-shadow: 10px 10px 2px 1px rgba(59, 1, 112, 0.671); */
+    color: rgba(100, 0, 196, .95);
+}
+
+.navbar_left > li > a:before {
+    transition: all 1s ease-in-out;
 }
 
 .navbar_right > li {
