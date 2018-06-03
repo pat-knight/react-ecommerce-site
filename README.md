@@ -2,7 +2,7 @@
 
 #### An ecommerce site built in React using [tools](link)
 
-### [Put link to live site here](link)
+### [Go to site](http://www.knittainparadise.com/)
 
 
 
