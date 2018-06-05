@@ -13,21 +13,21 @@ class ProductList extends Component {
     }
 
     componentDidMount() {
-        this.fetchProducts();
+        // this.fetchProducts();
     }
 
     //Token returned from Stripe
-    async fetchProducts() {
-        const res = await fetch(config.stripe.productsUrl, {
-            method: 'GET'
-        });
-        const response = await res.json();
-        const products = response.data;
+    // async fetchProducts() {
+    //     const res = await fetch(config.stripe.productsUrl, {
+    //         method: 'GET'
+    //     });
+    //     const response = await res.json();
+    //     const products = response.data;
 
-        this.setState({
-            products
-        });
-    }
+    //     this.setState({
+    //         products
+    //     });
+    // }
 
     render() {
         const {products} = this.state;

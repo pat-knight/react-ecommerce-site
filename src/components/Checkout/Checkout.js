@@ -18,14 +18,14 @@ class Checkout extends Component {
 
   componentDidMount() {
     const self = this;
-    this.handler = window.StripeCheckout.configure({
-      key: config.stripe.apiKey,
-      image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-      locale: 'auto',
-      token: function (token) {
-        self.onToken(token);
-      }
-    });
+    // this.handler = window.StripeCheckout.configure({
+    //   key: config.stripe.apiKey,
+    //   image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+    //   locale: 'auto',
+    //   token: function (token) {
+    //     self.onToken(token);
+    //   }
+    // });
   }
 
   async onToken(token) { // Token returned from Stripe
@@ -33,32 +33,32 @@ class Checkout extends Component {
     const {sku} = this.props;
     const {firstName, lastName, street, streetNumber, zipcode, city} = this.state;
 
-    const res = await fetch(config.stripe.checkoutUrl, { // Backend API url
-      method: 'POST',
-      body: JSON.stringify({
-        token,
-        order: {
-          currency: config.stripe.currency,
-          items: [
-            {
-              type: 'sku',
-              parent: sku.id
-            }
-          ],
-          shipping: {
-            name: firstName + " " + lastName,
-            address: {
-              line1: street + " " + streetNumber,
-              city: city,
-              postal_code: zipcode
-            }
-          }
-        }
-      }),
-    });
-    const data = await res.json();
+    // const res = await fetch(config.stripe.checkoutUrl, { // Backend API url
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     token,
+    //     order: {
+    //       currency: config.stripe.currency,
+    //       items: [
+    //         {
+    //           type: 'sku',
+    //           parent: sku.id
+    //         }
+    //       ],
+    //       shipping: {
+    //         name: firstName + " " + lastName,
+    //         address: {
+    //           line1: street + " " + streetNumber,
+    //           city: city,
+    //           postal_code: zipcode
+    //         }
+    //       }
+    //     }
+    //   }),
+    // });
+    // const data = await res.json();
     console.log('onToken'); // Logs for ease of debugging
-    console.log(data);
+    // console.log(data);
 
     this.setState({
       alreadyOrdered: true
@@ -123,7 +123,7 @@ class Checkout extends Component {
                       Cart</button>}
                 {shippingInfo || !addedToBasket ? null :
                     <form onSubmit={(e) => this.openStripe(e)}>
-                      <p>Chipping Address</p>
+                      <p>Shipping Address</p>
                       <div className="form-row">
                         <div className="form-group col-md-6">
                           <input type="text" className="form-control"
