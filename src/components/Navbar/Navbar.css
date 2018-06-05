@@ -24,20 +24,20 @@ background: linear-gradient(135deg, rgba(245,245,245,1) 0%, rgba(237,237,237,1) 
     justify-content: space-evenly;
 }
 
-.navbar_left > li {
+.navbar_left > li, .navbar_right > li {
     list-style: none;
     height: 80%;
     opacity: .9;
 }
 
-.navbar_left > li > a {
+.navbar_left > li > a, .navbar_left > li > a, .navbar_right > li > a, .navbar_right > li > a {
     text-decoration: inherit;
     color: rgba(100, 0, 196, .95);
     transition: all 1s ease-out; 
     position: relative;
 }
 
-.navbar_left > li > a:before {
+.navbar_left > li > a:before, .navbar_right > li > a:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -52,12 +52,12 @@ background: linear-gradient(135deg, rgba(245,245,245,1) 0%, rgba(237,237,237,1) 
     transition: all 0.3s ease-in-out 0s;
 }
 
-.navbar_left > li > a:hover:before, .navbar_left > li > a:focus:before {
+.navbar_left > li > a:hover:before, .navbar_left > li > a:focus:before, .navbar_right > li > a:hover:before, .navbar_right > li > a:focus:before {
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
 
-.navbar_right > li {
+/* .navbar_right > li {
     list-style: none;
-}
+} */
