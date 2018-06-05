@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
 import ProductList from './components/Shop/ProductList/ProductList';
+import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import './App.css';
 
@@ -21,8 +22,9 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Route exact path='/' component={Banner} />
-          <Route exact path='/Products' component={ProductList} />
-          <Route exact path='/Checkout' component={Checkout} />
+          <Route exact path='/products' component={ProductList} />
+          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/checkout' component={Checkout} />
           <Footer />
         </div>
       </Router>
