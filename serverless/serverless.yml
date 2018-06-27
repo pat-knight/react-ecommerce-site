@@ -23,13 +23,11 @@ custom:
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: dev
+  region: us-east-1
 
-# you can overwrite defaults here
- stage: dev
- region: us-east-1
-
- environment:
-    STRIPE_SECRET_KEY: ${self:custom.secrets.stripeSecretKey} # Stripe secret API key
+environment:
+  STRIPE_SECRET_KEY: ${self:custom.secrets.stripeSecretKey} # Stripe secret API key
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
